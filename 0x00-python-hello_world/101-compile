@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+python3.11 $PYFILE > my_main.pyc
+export PYFILEc=my_main.pyc
