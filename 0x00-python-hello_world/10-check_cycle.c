@@ -10,6 +10,8 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *current;
+	listint_t *temp;
+	listint_t *temp_cpy;
 
 	current =  list;
 
@@ -24,6 +26,15 @@ int check_cycle(listint_t *list)
 		if (current == NULL)
 			return (0);
 
+		temp = current;
+		temp_cpy = temp;
+		temp = temp->next;
+		while (temp) /* check for cycle within list */
+		{
+			if (temp == temp_cpy)
+				return (1);
+			temp = temp->next;
+		}
 		current = current->next;
 	}
 }
