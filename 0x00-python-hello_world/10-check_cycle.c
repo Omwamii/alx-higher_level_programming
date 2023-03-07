@@ -9,30 +9,20 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *current;
-	listint_t *temp, *temp_cpy;
+	listint_t *slow, *fast;
 
-	current =  list;
-	if (current == NULL)
+	if (list == NULL)
 		return (0);
 
-	current = current->next;
-	while (1)
+	slow = list;
+	fast = list->next;
+	while (fast != NULL && fast->next != NULL)
 	{
-		if (current == list)
+		if (fast == slow || fast->next == slow)
 			return (1);
-		if (current == NULL)
-			return (0);
-
-		temp = current;
-		temp_cpy = temp;
-		temp = temp->next;
-		while (temp) /* check for cycle within list */
-		{
-			if (temp == temp_cpy)
-				return (1);
-			temp = temp->next;
-		}
-		current = current->next;
+		fast = fast->next->next;
+		slow = slow->next;
 	}
+	return (0);
 }
+
