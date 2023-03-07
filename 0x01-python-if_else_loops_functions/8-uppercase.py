@@ -9,5 +9,5 @@ def uppercase(str):
         else:
             val = asc - 32
             output += chr(val)
-    print(f"{output}", end="")
+    print("{}".format(output), end="")
     print()
