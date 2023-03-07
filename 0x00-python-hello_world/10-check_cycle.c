@@ -10,11 +10,9 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *current;
-	listint_t *temp;
-	listint_t *temp_cpy;
+	listint_t *temp, *temp_cpy;
 
 	current =  list;
-
 	if (current == NULL)
 		return (0);
 
