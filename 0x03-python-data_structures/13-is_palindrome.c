@@ -40,12 +40,6 @@ int is_palindrome(listint_t **head)
 	rev = malloc(size);
 	for (; j >= 0; j--, i++)
 		rev[i] = fwd[j];
-	for (i = 0; i < (size / sizeof(int)); i++)
-		printf("%d ", fwd[i]);
-	printf("\n");
-	for (i = 0; i < (size / sizeof(int)); i++)
-		printf("%d ", rev[i]);
-	printf("\n");
 	num = compare_int(fwd, rev, (size / sizeof(int)));
 	free(fwd), free(rev);
 	return (num);
