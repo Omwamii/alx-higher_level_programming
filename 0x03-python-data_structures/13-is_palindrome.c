@@ -14,15 +14,12 @@ int compare_int(int a[], int b[], size_t size);
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
-	int *fwd, *rev;
-	size_t i = 0;
-	size_t size = sizeof(int);
+	int *fwd, *rev, j, num;
+	size_t i = 0, size = sizeof(int);
 	void *wd;
-	int j, num;
 
 	if (current == NULL) /* empty list */
 		return (1);
-
 
 	fwd = malloc(size);
 	while (current->next != NULL)
