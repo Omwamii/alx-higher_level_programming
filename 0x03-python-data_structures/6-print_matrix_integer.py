@@ -7,7 +7,7 @@ def print_matrix_integer(matrix=[[]]):
         for row in matrix:
             for d in range(len(row)):
                 if d < len(row) - 1:
-                    print("{}".format(row[d]), end=" ")
+                    print("{:d}".format(row[d]), end=" ")
                 else:
-                    print("{}".format(row[d]), end="")
+                    print("{:d}".format(row[d]), end="")
             print()
