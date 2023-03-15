@@ -1,6 +1,6 @@
-#include <Python.h>
-#include <object.h>
-#include <listobject.h>
+#include <python2.7/Python.h>
+#include <python2.7/object.h>
+#include <python2.7/listobject.h>
 #include <stdio.h>
 
 /**
@@ -17,5 +17,5 @@ void print_python_list_info(PyObject *p)
 	printf("[*] Allocated = %zd\n", py->allocated);
 
 	for (; i < size; i++)
-		printf("Element %i: %s\n", i, Py_TYPE(obj->ob_item[i])->tp_name);
+		printf("Element %li: %s\n", i, Py_TYPE(py->ob_item[i])->tp_name);
 }
