@@ -1,6 +1,6 @@
-#include <python2.7/Python.h>
-#include <python2.7/object.h>
-#include <python2.7/listobject.h>
+#include <python3.4/Python.h>
+#include <python3.4/object.h>
+#include <python3.4/listobject.h>
 #include <stdio.h>
 
 /**
