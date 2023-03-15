@@ -2,7 +2,7 @@
 def search_replace(my_list, search, replace):
     '''replaces all occurrences of an element by another in a new list.'''
     if my_list is None or len(my_list) == 0:
-        return my_list
+        return None
     new_list = my_list.copy()
     index = new_list.index(search)
 
