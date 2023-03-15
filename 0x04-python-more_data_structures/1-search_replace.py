@@ -10,7 +10,7 @@ def search_replace(my_list, search, replace):
     try:
         index = new_list.index(search)
     except ValueError:
-        return new_list # no instance found
+        return new_list  # no instance found
 
     while index >= 0:
         new_list.remove(search)
