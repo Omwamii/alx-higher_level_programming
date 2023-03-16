@@ -3,7 +3,7 @@ def weight_average(my_list=[]):
     '''returns weighted average of all integers in tuple'''
     if len(my_list) == 0:
         return 0
-    mult_sum ,weight_sum = 0, 0
+    mult_sum, weight_sum = 0, 0
     for item in my_list:
         mult_sum += (item[0] * item[1])
         weight_sum += item[1]
