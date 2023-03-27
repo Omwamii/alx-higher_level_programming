@@ -7,5 +7,8 @@ def safe_print_integer_err(value):
     except ValueError as val:
         print(f"Exception: {val}", file=sys.stderr)
         return False
+    except TypeError as tp:
+        print(f"Exception: {tp}", file=sys.stderr)
+        return False
     else:
         return True
