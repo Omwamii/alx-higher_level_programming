@@ -64,9 +64,11 @@ class Square:
                 print()
 
     def __str__(self):
-        """ define print """
+        """ define print() """
+
         if self.__size == 0:
-            return "\n"
+            return ""
+
         data = []
         count = 0
         for i in range(0, self.__position[1]):
