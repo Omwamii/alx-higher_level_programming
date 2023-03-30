@@ -6,8 +6,8 @@ class Node:
     """ 'node' representing linked list """
     def __init__(self, data=0, next_node=None):
         """ initialize data"""
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -30,7 +30,7 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         """ next_node setter """
-        if isinstance(self.__next_node, Node) or self.__next_node is None:
+        if isinstance(value, Node) or value is None:
             self.__next_node = value
         else:
             raise TypeError('next_node must be a Node object')
