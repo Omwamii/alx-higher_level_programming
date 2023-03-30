@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ module containin class 'node' """
+
+
 class Node:
     """ 'node' representing linked list """
     def __init__(self, data=0, next_node=None):
@@ -33,15 +35,17 @@ class Node:
         else:
             raise TypeError('next_node must be a Node object')
 
+
 class SinglyLinkedList:
-    
     """ list class """
+
     def __init__(self):
         """ init """
         self.__head = None
-    
+
     def sorted_insert(self, value):
         """ inserts new node into sorted position in list """
+
         curr_node = self.__head
         tmp = self.__head
         new = Node()
@@ -49,16 +53,30 @@ class SinglyLinkedList:
         new.next_node = None
         if curr_node is None:  # first node
             self.__head = new
+            return
 
         while curr_node is not None:
             if curr_node.data > new.data:
                 new.next_node = curr_node
-                if curr_node == self.__head:  #insert at beginning
+                if curr_node == self.__head:  # insert at beginning
                     self.__head = new
-                tmp.next_node = new
+                    break
+                else:
+                    tmp.next_node = new
+                    break
             else:
                 if curr_node.next_node is None:  # insert at the end
                     curr_node.next_node = new
                     break
                 tmp = curr_node
                 curr_node = curr_node.next_node
+
+    def __str__(self):
+        """ print nodes """
+        nodes = []
+        curr_node = self.__head
+        while curr_node is not None:
+            data = str(curr_node.data)
+            nodes.append(data)
+            curr_node = curr_node.next_node
+        return "\n".join(nodes)
