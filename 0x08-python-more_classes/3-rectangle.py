@@ -47,4 +47,20 @@ class Rectangle:
 
     def perimeter(self):
         """ get rect perimeter """
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """ define printable """
+        rect = []
+        count = 0
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        for h in range(0, self.__height):
+            count += 1
+            for w in range(0, self.__width):
+                rect.append("#")
+            if count < self.__height:
+                rect.append("\n")
+        return "".join(rect)
