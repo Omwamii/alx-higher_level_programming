@@ -18,18 +18,6 @@ class Rectangle:
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
 
-    def __gt__(self, other):
-        """ define > """
-        return (self.__width * self.__height) > (other.height * other.width)
-
-    def __lt__(self, other):
-        """ define < """
-        return (self.__width * self.__height) < (other.height * other.width)
-
-    def __eq__(self, other):
-        """ define == """
-        return (self.__width * self.__height) == (other.height * other.width)
-
     @property
     def width(self):
         """ width getter """
@@ -99,11 +87,11 @@ class Rectangle:
         if not isinstance(rect_2, Rectangle):
             raise TypeError('rect_2 must be an instance of Rectangle')
             return
-        if rect_1 > rect_2:
+        if rect_1.area() > rect_2.area():
             return rect_1
-        if rect_1 < rect_2:
+        if rect_1.area() < rect_2.area():
             return rect_2
-        if rect_1 == rect_2:
+        else:
             return rect_1
 
     @classmethod
