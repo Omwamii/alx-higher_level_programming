@@ -28,3 +28,7 @@ TypeError: div must be a number
 
 >>> print(matrix_divided(matrix, 3))
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+>>>print(matrix_divided(matrix)
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
