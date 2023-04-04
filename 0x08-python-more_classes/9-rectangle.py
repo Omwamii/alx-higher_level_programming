@@ -12,6 +12,7 @@ class Rectangle:
         type(self).number_of_instances += 1
         self.width = width
         self.height = height
+
     def __del__(self):
         """ define destructor """
         type(self).number_of_instances -= 1
