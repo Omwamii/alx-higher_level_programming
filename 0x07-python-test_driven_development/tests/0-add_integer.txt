@@ -1,0 +1,40 @@
+---------------------------
+How to use 0-add_integer.py
+---------------------------
+
+function: `add_integer(a, b=98)`
+returns addition of two integers (floats converted to int)
+
+::
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(0)
+	98
+
+	>>> add_integer(2, 2)
+	4
+
+	>>> add_integer(6.5, 3)
+	9
+
+	>>> add_integer(7.8, 2.2)
+	9
+
+	>>> add_integer("sept")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(2, "d")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+	>>> add_integer(None, 2)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(2, None)
+	Traceback (most recent call last):
+	TypeError: b must be an integer
