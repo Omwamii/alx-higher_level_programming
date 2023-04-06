@@ -13,8 +13,7 @@ def text_indentation(text):
         raise TypeError('text must be a string')
     for item in text:
         if item == '.' or item == '?' or item == ':':
-            print(item, end="")
-            print()
+            print(item)
             print()
         else:
             print(item, end="")
