@@ -16,10 +16,9 @@ class TestMaxInteger(unittest.TestCase):
         self.list3 = []  # return None for empty list
         self.list4 = [6]
         self.list5 = [6, 3.4, 10, 32.5]
-        self.list6 = [10, 2, 4, 5, 6] # max at beginning
-        self.list7 = [2, 4, 5, -4, 3] # 1 negative num
+        self.list6 = [10, 2, 4, 5, 6]  # max at beginning
+        self.list7 = [2, 4, 5, -4, 3]  # 1 negative num
         self.list8 = [-2, -4, -1, -5, -6]
-
 
     def test_integers_list(self):
         """ test for max_integer int int list"""
