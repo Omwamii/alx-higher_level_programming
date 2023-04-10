@@ -16,6 +16,10 @@ class TestMaxInteger(unittest.TestCase):
         self.list3 = []  # return None for empty list
         self.list4 = [6]
         self.list5 = [6, 3.4, 10, 32.5]
+        self.list6 = [10, 2, 4, 5, 6] # max at beginning
+        self.list7 = [2, 4, 5, -4, 3] # 1 negative num
+        self.list8 = [-2, -4, -1, -5, -6]
+
 
     def test_integers_list(self):
         """ test for max_integer int int list"""
@@ -41,6 +45,21 @@ class TestMaxInteger(unittest.TestCase):
         """ test list with floats and ints"""
         ans = max_integer(self.list5)
         self.assertEqual(ans, 32.5)
+
+    def test_max_beg(self):
+        """ test max number at beginning """
+        ans = max_integer(self.list6)
+        self.assertEqual(ans, 10)
+
+    def test_neg_element(self):
+        """ test case: one negative element """
+        ans = max_integer(self.list7)
+        self.assertEqual(ans, 5)
+
+    def test_all_negative(self):
+        """ test case: all elements are negative"""
+        ans = max_integer(self.list8)
+        self.assertEqual(ans, -1)
 
 
 if __name__ == "__main__":
