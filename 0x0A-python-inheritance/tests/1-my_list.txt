@@ -19,3 +19,24 @@ print_sorted(self)
 
 >>> new.print_sorted()
 []
+
+>>> new.append(None)
+>>> new.append(None)
+>>> new.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+
+>>> mix = MyList()
+>>> mix.append("js")
+>>> mix.append("cpp")
+>>> mix.append("c")
+>>> mix.print_sorted()
+['c', 'cpp', 'js']
+
+>>> mix = MyList()
+>>> mix.append("ok")
+>>> mix.append(1)
+>>> mix.append(None)
+>>> mix.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'int' and 'str'
