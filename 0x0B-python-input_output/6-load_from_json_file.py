@@ -2,6 +2,7 @@
 """
 module with 'load_from_json'
 """
+import json
 
 
 def load_from_json_file(filename):
