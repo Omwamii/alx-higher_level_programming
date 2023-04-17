@@ -9,7 +9,7 @@ def pascal_triangle(n):
     triangle of n
     """
     if n <= 0:
-        return [[]]
+        return []
 
     pascal = []
     for i in range(n):
