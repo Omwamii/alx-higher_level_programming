@@ -26,3 +26,25 @@ class Square(Rectangle):
         """ override __str__ """
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """ assigns attributes """
+        if args and len(args) != 0:
+            for c, i in enumerate(args):
+                if c == 0:
+                    if i is None:
+                        super().__init__(self.id, self.size, self.x, self.y)
+                    else:
+                        self.id = i
+                elif c == 1:
+                    self.size = i
+                elif c == 2:
+                    self.x = i
+                elif c == 3:
+                    self.y = i
+
+        else:
+            if kwargs and len(kwargs) != 0:
+                for key, value in kwargs.items():
+                    if hasattr(self, key):
+                        setattr(self, key, value)
