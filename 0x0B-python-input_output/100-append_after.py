@@ -5,7 +5,7 @@ module with 'append_after'
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """ inserts line of text to a file """
+    """ inserts line of text to a file after occurence of certain string"""
     with open(filename, mode="r", encoding="utf-8") as f:
         file_data = f.readlines()
 
