@@ -36,3 +36,10 @@ class Base:
             data = cls.to_json_string(obj_dicts)  # convert list to json rep
         with open(filename, "w") as f:
             f.write(data)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ return list of the JSON string rep """
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
