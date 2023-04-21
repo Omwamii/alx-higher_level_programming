@@ -76,7 +76,7 @@ class Base:
                 f.write("[]")
             else:
                 if cls.__name__ == "Rectangle":
-                   fieldnames = ["id", "width", "height", "x", "y"]
+                    fieldnames = ["id", "width", "height", "x", "y"]
                 elif cls.__name__ == "Square":
                     fieldnames = ["id", "size", "x", "y"]
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
