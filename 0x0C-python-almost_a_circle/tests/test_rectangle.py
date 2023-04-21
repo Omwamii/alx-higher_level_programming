@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Defines unittests for models/rectangle.py.
 Unittest classes:
@@ -800,6 +799,7 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         r = Rectangle(10, 2, 4, 1, 2)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
+
 
 if __name__ == "__main__":
     unittest.main()
