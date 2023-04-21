@@ -3,6 +3,7 @@
 base class module
 """
 import json
+import csv
 
 
 class Base:
@@ -62,5 +63,40 @@ class Base:
             with open(filename, "r") as f:
                 attrs = cls.from_json_string(f.read())
                 return [cls.create(**attr) for attr in attrs]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serializes an object in cvs """
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ deserializes data from csv file returning list of instances
+            created from the csv file or [] if file not found
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as f:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    fieldnames = ["id", "size", "x", "y"]
+                attr_dicts = csv.DictReader(f, fieldnames=fieldnames)
+                attr_dicts = [dict([i, int(j)] for i, j in k.items())
+                              for k in attr_dicts]
+                return [cls.create(**k) for k in attr_dicts]
         except IOError:
             return []

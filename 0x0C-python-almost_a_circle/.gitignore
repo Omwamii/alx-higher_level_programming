@@ -17,3 +17,6 @@ __pycache_
 17-main.py
 18-main.py
 19-main.py
+*.json
+*.csv
+100-main.py
