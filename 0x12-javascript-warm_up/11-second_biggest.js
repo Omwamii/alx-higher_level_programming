@@ -4,7 +4,7 @@ if (process.argv.length < 4) {
 } else {
   const myNums = [];
   for (let i = 2; i < process.argv.length; i++) {
-    myNums.push(process.argv[i]);
+    myNums.push(parseInt(process.argv[i]));
   }
   let largest = myNums[0];
   for (let i = 0; i < myNums.length; i++) {
