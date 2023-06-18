@@ -6,12 +6,10 @@ from model_state import Base, State
 from model_city import City
 
 if __name__ == "__main__":
-    u_name = sys.argv[1]
-    passw = sys.argv[2]
-    db_name = sys.argv[3]
-
-    # Create engine
-    engine = create_engine(f'mysql+mysqldb://{u_name}:{passw}@localhost/{db_name}')
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'
+        .format(argv[1], argv[2],
+                argv[3]), pool_pre_ping=True)
 
     # Bind the engine to the base metadata
     Base.metadata.bind = engine
@@ -21,8 +19,10 @@ if __name__ == "__main__":
     session = Session()
 
     # Query all cities with their associated state
-    cities = session.query(City).join(State).order_by(City.id)
+    results = session.query(City, State).\
+        filter(City.state_id == State.id).all()
 
     # Print results
-    for city in cities:
-        print(f'{city.state.name}: ({city.id}) {city.name}')
+    for city, state in results:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    session.close()
