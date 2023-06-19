@@ -21,7 +21,9 @@ if __name__ == "__main__":
 
     # fetch all States objects and sort them by id
     state = session.query(State).order_by(State.id).first()
-    print(f'{state.id}: {state.name}')
-
+    if state is None:
+        print("Nothing")
+    else:
+        print(state.id, state.name, sep=": ")
     # close session
     session.close()
