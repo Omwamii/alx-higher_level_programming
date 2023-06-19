@@ -26,7 +26,7 @@ def list_states():
     cursor = conn.cursor()
 
     # execute query
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
     cursor.execute(query)
 
     # fetch rows from the result
