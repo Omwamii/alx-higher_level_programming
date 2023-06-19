@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Change name of State obj from the database
+""" Add state object to database
 """
 import sys
 from model_state import Base, State
@@ -13,7 +13,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_instance = session.query(State).filter_by(id=2).first()
-    new_instance.name = 'New Mexico'
+    new_state = State(name='Louisiana')
+    session.add(new_state)
+    new_instance = session.query(State).filter_by(name='Louisiana').first()
+    print(new_instance.id)
     session.commit()
     session.close()
