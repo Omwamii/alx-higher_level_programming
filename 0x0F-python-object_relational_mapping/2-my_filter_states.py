@@ -28,7 +28,11 @@ def list_states():
     cursor = conn.cursor()
 
     # query template to use
-    q_templ = "SELECT * FROM states WHERE name LIKE '{state}' ORDER BY id ASC"
+    q_templ = """SELECT *
+    FROM states
+    WHERE name LIKE BINARY '{state}'
+    ORDER BY id ASC"""
+
     query = q_templ.format(state=state_name)
 
     cursor.execute(query)
