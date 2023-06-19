@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" module to list all cities of passed state
+"""
 import MySQLdb
 import sys
 
