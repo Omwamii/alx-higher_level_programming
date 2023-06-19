@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+module to change name of State object
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
