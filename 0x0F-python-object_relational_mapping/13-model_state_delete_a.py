@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module to delete State objects with name with `a`
+module to delete State objects with name with 'a'
 """
 import sys
 from sqlalchemy import create_engine
