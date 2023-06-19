@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" module to list state passed
+"""
 import MySQLdb
 import sys
 

@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" module to display states with matchin name passed
+"""
 import MySQLdb
 import sys
 

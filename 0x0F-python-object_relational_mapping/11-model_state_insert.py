@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-module to add a State object to db
+"""module to add a State object to db
 """
 import sys
 from sqlalchemy import create_engine

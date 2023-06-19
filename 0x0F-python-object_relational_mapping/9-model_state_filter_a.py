@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-module to connect to fetch states with `a`
+"""module to connect to fetch states with `a`
 """
 from model_state import Base, State
 from sqlalchemy import (create_engine)
