@@ -11,8 +11,8 @@ import sys
 if __name__ == "__main__":
     engine = create_engine(
             'mysql+mysqldb://{}:{}@localhost:3306/{}'
-            .format(argv[1], argv[2],
-                    argv[3]), pool_pre_ping=True)
+            .format(sys.argv[1], sys.argv[2],
+                    sys.argv[3]), pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
 
@@ -22,10 +22,7 @@ if __name__ == "__main__":
     session = Session()
 
     # fetch all States objects containing 'a' and sort them by id
-    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
-
-    for state in states:
-        print(f'{state.id}: {state.name}')
-
+    for state in session.query(State).filter(State.name.like('%a%')):
+        print(state.id, state.name, sep=": ")
     # close session
     session.close()
