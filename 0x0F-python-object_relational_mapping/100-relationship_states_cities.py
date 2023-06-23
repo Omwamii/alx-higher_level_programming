@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" script to create objects with relationships
+"""
 import sys
 from relationship_state import Base, State
 from relationship_city import City
