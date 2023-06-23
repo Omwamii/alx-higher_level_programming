@@ -73,11 +73,13 @@ if len(sys.argv) != 2:
 # Parse and validate the input
 try:
     N = int(sys.argv[1])
-    if N < 4:
-        raise ValueError
 except ValueError:
-    print("N must be a number and at least 4")
+    print("N must be a number")
     sys.exit(1)
+else:
+    if N < 4:
+        print("N must be at least 4")
+        sys.exit(1)
 
 # Create an empty N x N board
 board = [[0] * N for _ in range(N)]
