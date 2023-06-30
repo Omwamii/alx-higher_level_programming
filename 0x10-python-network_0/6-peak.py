@@ -4,7 +4,7 @@
 
 
 def find_peak(arg_list):
-    """ fn to find a peak in a list like: /\.
+    """ fn to find a peak in a list
     """
     if not isinstance(arg_list, list):
         return None
