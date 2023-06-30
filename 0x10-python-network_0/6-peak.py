@@ -12,6 +12,8 @@ def find_peak(arg_list=None):
         return None  # if only one item, no peak formed
     peak = None
     for index, item in enumerate(arg_list):
+        if not isinstance(item, int) and not isinstance(item, float):
+            return None  # not a digit
         if index == 0:  # skip first item as peak
             continue
         if peak is None:
