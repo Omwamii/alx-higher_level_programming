@@ -3,7 +3,7 @@
 """
 
 
-def find_peak(arg_list):
+def find_peak(arg_list=None):
     """ fn to find a peak in a list
     """
     if not isinstance(arg_list, list):
