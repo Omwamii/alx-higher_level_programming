@@ -31,4 +31,7 @@ def find_peak(arg_list=None):
                 if index < len(arg_list) - 1:
                     if arg_list[index + 1] < item:
                         break
+    if peak == arg_list[1]:
+        if arg_list[0] > peak:
+            peak = arg_list[0]
     return peak
