@@ -2,15 +2,17 @@
 """ script takes URL and email and sends POST request to URL
 with email as param, displays body of response header
 """
-from urllib.request import urlopen, Request
 from urllib.parse import urlencode
+import urllib.request
 import sys
 
-url = sys.argv[1]
-email = sys.argv[2]
-
-data = urlencode({'email': email}).encode('utf-8')
-request = Request(url, data=data, method='POST')
-with urlopen(request) as response:
-    body = response.read().decode('utf-8')
-    print(body)
+if __name__ == "__main__":
+    url = sys.argv[1]
+    email = sys.argv[2]
+    data = {
+            "email": email
+            }
+    request = urllib.request.Request(url, urlencode(data).encode('utf-8'))
+    with urllib.request.urlopen(request) as response:
+        body = response.read().decode('utf-8')
+        print(body)
