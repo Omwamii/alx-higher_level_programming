@@ -1,0 +1,13 @@
+#!/bin/bash
+# Get the repository URL and branch dynamically
+repo_url=$(git config --get remote.origin.url)
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ $# -ne 1 ]; then
+   echo 'USAGE: push "message"'
+   exit 1
+else
+   git add .
+   git commit -m "$1"
+   git push $repo_url $branch
+fi
