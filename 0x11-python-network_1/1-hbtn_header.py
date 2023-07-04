@@ -7,8 +7,9 @@ import sys
 
 url = sys.argv[1]
 
-with urlopen(url) as response:
-    x_request_id = response.headers.get('X-Request-Id')
+if __name__ == "__main__":
+    with urlopen(url) as response:
+        x_request_id = response.headers.get('X-Request-Id')
 
     if x_request_id is not None:
         print(x_request_id)
