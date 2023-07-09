@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-module to print the State oj passed
+""" module to print the State oj passed
 """
 from model_state import Base, State
 from sqlalchemy import (create_engine)

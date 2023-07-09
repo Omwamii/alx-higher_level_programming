@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-module to fetch cities from Cities obj
+""" module to fetch cities from Cities obj
 """
 import sys
 from sqlalchemy import create_engine
