@@ -2,7 +2,7 @@
 
 const request = require('request');
 const endpoint = process.argv[2];
-const starUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
+const starId = '18';
 
 request(endpoint, function (error, response, body) {
   if (error) {
@@ -11,8 +11,10 @@ request(endpoint, function (error, response, body) {
     let count = 0;
     const res = JSON.parse(body).results;
     for (const result of res) {
-      if (result.characters.includes(starUrl)) {
-        count += 1;
+      for (const character of result.characters) {
+        if (character.includes(starId)) {
+          count += 1;
+        }
       }
     }
     console.log(count);
