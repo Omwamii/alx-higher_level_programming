@@ -8,7 +8,7 @@ request.get(endpoint, { json: true }, function (error, response, body) {
     console.log(error);
   } else {
     const tasks = {};
-    for (const task of body) {
+    body.forEach((task) => {
       if (task.completed) {
         if (task.userId in tasks) {
           tasks[task.userId] += 1;
@@ -16,7 +16,7 @@ request.get(endpoint, { json: true }, function (error, response, body) {
           tasks[task.userId] = 1;
         }
       }
-    }
+    });
     console.log(tasks);
   }
 });
