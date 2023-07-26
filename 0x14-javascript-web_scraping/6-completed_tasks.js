@@ -3,7 +3,7 @@
 const request = require('request');
 const endpoint = process.argv[2];
 
-request.get(endpoint, { json: true }, function (error, response, body) {
+request.get(endpoint, { json: true }, (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
